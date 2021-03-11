@@ -8,11 +8,15 @@
 
 body {
   background-color: white;
-  padding: 40px;
+  padding: 20px;
 }
 
 h1 {
   font-size: 1.5em;
+}
+
+input {
+  width: 200px;
 }
 
 main {
@@ -27,6 +31,7 @@ header , section , ol {
 
 button {
   padding: 3px;
+  margin: 2px;
 }
 
 .selected {
