@@ -7,7 +7,7 @@ const moveUpBtn = document.getElementById('mover-cima');
 const moveDownBtn = document.getElementById('mover-baixo');
 const inputTask = document.getElementById('texto-tarefa');
 const taskList = document.getElementById('lista-tarefas');
-let tasks = [];
+// let tasks = [];
 
 function addTask(e) {
   e.preventDefault();
