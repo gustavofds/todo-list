@@ -54,29 +54,40 @@ function removeCompleted() {
   }
 }
 
+// function setTasks() {
+//   const allTasks = document.querySelectorAll('.task');
+//   tasks = [];
+//   allTasks.forEach((li) => tasks.push({
+//     name: li.innerText,
+//     classes: li.classList,
+//   }));
+//   localStorage.setItem('tasks', JSON.stringify(tasks));
+// }
+
+// // Object.entries relembrado consultando documentação do MDN
+// function getTasks() {
+//   if (localStorage.tasks) {
+//     const recoveredTasks = JSON.parse(localStorage.getItem('tasks'));
+//     recoveredTasks.forEach((task) => {
+//       const newTaskItem = document.createElement('li');
+//       const classEntries = Object.entries(task.classes);
+//       for (let index = 0; index < classEntries.length; index += 1) {
+//         newTaskItem.classList.add(classEntries[index][1]);
+//       }
+//       newTaskItem.innerText = task.name;
+//       taskList.appendChild(newTaskItem);
+//     });
+//   }
+// }
+
 function setTasks() {
-  const allTasks = document.querySelectorAll('.task');
-  tasks = [];
-  allTasks.forEach((li) => tasks.push({
-    name: li.innerText,
-    classes: li.classList,
-  }));
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  const allTasks = taskList.innerHTML;
+  localStorage.setItem('tasks', allTasks);
 }
 
-// Object.entries relembrado consultando documentação do MDN
 function getTasks() {
   if (localStorage.tasks) {
-    const recoveredTasks = JSON.parse(localStorage.getItem('tasks'));
-    recoveredTasks.forEach((task) => {
-      const newTaskItem = document.createElement('li');
-      const classEntries = Object.entries(task.classes);
-      for (let index = 0; index < classEntries.length; index += 1) {
-        newTaskItem.classList.add(classEntries[index][1]);
-      }
-      newTaskItem.innerText = task.name;
-      taskList.appendChild(newTaskItem);
-    });
+    taskList.innerHTML = localStorage.getItem('tasks');
   }
 }
 
